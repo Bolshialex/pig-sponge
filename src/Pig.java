@@ -26,7 +26,23 @@ public class Pig {
 
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        return null;
+ 
+        String[] arrString = sentence.split(" ");
+        String result = "";
+        for(int i = 0; i < arrString.length; i++){
+            if(arrString[i].charAt(0) != 'a' && arrString[i].charAt(0) != 'e' && arrString[i].charAt(0) != 'i' && arrString[i].charAt(0) != 'o' && arrString[i].charAt(0) != 'u'){
+                char firstLetter = arrString[i].charAt(0);
+                String word = arrString[i];
+                word = word.substring(1);
+                word = word + firstLetter;
+                arrString[i] = word + "ay";           
+            }
+            result += arrString[i] + " ";
+        }
+        result = result.substring(0, result.length() - 1);
+        
+        
+        return result;
     }
 
 
